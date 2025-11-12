@@ -44,7 +44,7 @@ Sistema de monitoramento em tempo real de alunos com reconhecimento facial e an�
 - Flask
 - Navegador moderno (Chrome, Firefox, Safari, Edge)
 
-## 🔧 Instalação
+##  Instalação
 
 ### 1. Clonar o repositório
 ```bash
@@ -183,6 +183,7 @@ pip install -r requirements.txt --force-reinstall
 ```
 
 Última atualização: 12 de novembro de 2025
+
 
 
 
