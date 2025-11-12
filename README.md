@@ -211,11 +211,6 @@ pip install --upgrade pip
 pip install -r requirements.txt --force-reinstall
 ```
 
-
-
-
-
-**Desenvolvido com ❤️ pela equipe SENAI 4.0**
-
 Última atualização: 12 de novembro de 2025
+
 
