@@ -5,8 +5,6 @@ Sistema de monitoramento em tempo real de alunos com reconhecimento facial e an�
 
  Visão Geral
 
-O SmartClass é um dashboard inteligente desenvolvido para monitorar o desempenho e engajamento de alunos em tempo real, utilizando tecnologias como reconhecimento facial, análise de dados e visualizações interativas.
-
 ##  Funcionalidades
 
 ### Dashboard Principal
@@ -145,22 +143,6 @@ Retorna dados de câmera e detecções
 ### GET /api/export/<tipo>
 Exporta relatórios (pdf/excel/analise)
 
-## Animações e Efeitos Visuais
-
-O projeto inclui diversos efeitos CSS modernos:
-- **Entrada de Cards**: slideInRight
-- **Gráficos**: scaleIn
-- **Ícones**: float, rotate
-- **Botões**: Ripple effect
-- **Hover**: Shine effect, glow
-- **Transições**: Smooth transitions (0.3s)
-
-## Auto-refresh
-
-- Dados: A cada 30 segundos
-- Câmera: A cada 5 segundos
-- Alertas: A cada 10 segundos
-
 ## Responsividade
 
 Breakpoints:
@@ -180,17 +162,6 @@ Breakpoints:
 ```
 web: gunicorn app:app
 ```
-
-## Próximos Passos
-
-### Implementações Necessárias:
-- [ ] Integração com OpenCV/MediaPipe para reconhecimento facial
-- [ ] Banco de dados real (SQLite/PostgreSQL)
-- [ ] Autenticação segura com JWT
-- [ ] Sistema de detecção de emoções
-- [ ] Exportação de relatórios em PDF
-- [ ] Gráficos em tempo real com WebSockets
-- [ ] Dashboard de análise avançada
 
 ## Troubleshooting
 
@@ -212,5 +183,6 @@ pip install -r requirements.txt --force-reinstall
 ```
 
 Última atualização: 12 de novembro de 2025
+
 
 
