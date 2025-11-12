@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SmartClass - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0057b8 0%, #003f7f 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0057b8;
+            box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #0057b8 0%, #004a99 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 87, 184, 0.3);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .demo-users {
+            background: #f5f7ff;
+            border: 1px solid #d4e0ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 25px;
+        }
+
+        .demo-users h3 {
+            font-size: 12px;
+            color: #0057b8;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .demo-user {
+            font-size: 13px;
+            color: #555;
+            padding: 6px 0;
+            border-bottom: 1px solid #e0e0ff;
+        }
+
+        .demo-user:last-child {
+            border-bottom: none;
+        }
+
+        .demo-user code {
+            background: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #0057b8;
+            font-weight: 600;
+        }
+
+        .error-msg {
+            display: none;
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .error-msg.show {
+            display: block;
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #fff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        .btn-login.loading .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .demo-users {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner removido conforme solicitado: não será exibido no login -->
+    <div class="login-container">
+        <div class="logo-area">
+            <h1>SmartClass</h1>
+            <p class="subtitle">Sistema de Monitoramento Inteligente</p>
+        </div>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Digite seu usuário" autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required placeholder="Digite sua senha" autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn-login" id="btnLogin">
+                <span class="spinner"></span>
+                Entrar
+            </button>
+        </form>
+
+        <div class="demo-users">
+            <h3>Usuários de Teste</h3>
+            <div class="demo-user"><code>professor</code> / <code>prof123</code></div>
+            <div class="demo-user"><code>diretor</code> / <code>dir123</code></div>
+            <div class="demo-user"><code>admin</code> / <code>admin123</code></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const btnLogin = document.getElementById('btnLogin');
+        const errorMsg = document.getElementById('errorMsg');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+
+            btnLogin.disabled = true;
+            btnLogin.classList.add('loading');
+            errorMsg.classList.remove('show');
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ usuario, senha })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    window.location.href = '/dashboard';
+                } else {
+                    errorMsg.textContent = 'Usuário ou senha inválidos';
+                    errorMsg.classList.add('show');
+                }
+            } catch (error) {
+                errorMsg.textContent = 'Erro ao conectar. Tente novamente.';
+                errorMsg.classList.add('show');
+            } finally {
+                btnLogin.disabled = false;
+                btnLogin.classList.remove('loading');
+            }
+        });
+
+        // Auto-fill para teste rápido
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'p') {
+                document.getElementById('usuario').value = 'professor';
+                document.getElementById('senha').value = 'prof123';
+            }
+        });
+    </script>
+</body>
+</html>
