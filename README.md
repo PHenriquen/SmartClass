@@ -1,22 +1,13 @@
 # SmartClass - Dashboard SENAI 4.0
 
-![Capa do SmartClass](static/img/cover.png)
 
 Sistema de monitoramento em tempo real de alunos com reconhecimento facial e análise de engajamento.
 
-## 🎯 Visão Geral
+ Visão Geral
 
 O SmartClass é um dashboard inteligente desenvolvido para monitorar o desempenho e engajamento de alunos em tempo real, utilizando tecnologias como reconhecimento facial, análise de dados e visualizações interativas.
 
-## 👥 Equipe de Desenvolvimento
-
-- **Pedro Henrique Nogueira** - Líder do projeto
-- **Bruno Allan** - Desenvolvimento
-- **Arthur Bernado** - Desenvolvimento
-- **Gabriel Andrade** - Desenvolvimento
-- **Eduardo Perdigão** - Desenvolvimento
-
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 ### Dashboard Principal
 - **Visão Geral**: Estatísticas em tempo real (presença, engajamento, nota média, alunos em risco)
@@ -49,7 +40,7 @@ O SmartClass é um dashboard inteligente desenvolvido para monitorar o desempenh
 - Análise detalhada
 - Integração com APIs externas
 
-## 📦 Requisitos
+## Requisitos
 
 - Python 3.8+
 - Flask
@@ -91,7 +82,7 @@ python app.py
 
 A aplicação estará disponível em `http://127.0.0.1:5000`
 
-## 📚 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 smartclass/
@@ -110,23 +101,13 @@ smartclass/
 └── README.md                # Este arquivo
 ```
 
-## 🔐 Autenticação
+## Autenticação
 
 **Usuário de Demo:**
 - Usuário: qualquer texto
 - Senha: qualquer texto
 
-⚠️ **Nota**: Para produção, implementar autenticação segura com hash de senhas e JWT tokens.
-
-## 🎨 Customização
-
-### Cores (SENAI)
-Editar em `static/css/style.css`:
-```css
---primary: #0057b8;      /* Azul SENAI */
---primary-dark: #004a99;
---primary-light: #42a5f5;
-```
+**Nota**: Para produção, implementar autenticação segura com hash de senhas e JWT tokens.
 
 ### Equipe
 Editar lista `TEAM` em `app.py`:
@@ -140,7 +121,7 @@ TEAM = [
 ]
 ```
 
-## 📊 APIs Disponíveis
+ APIs Disponíveis
 
 ### GET /api/dados
 Retorna dados de estatísticas e alunos
@@ -164,7 +145,7 @@ Retorna dados de câmera e detecções
 ### GET /api/export/<tipo>
 Exporta relatórios (pdf/excel/analise)
 
-## 🎬 Animações e Efeitos Visuais
+## Animações e Efeitos Visuais
 
 O projeto inclui diversos efeitos CSS modernos:
 - **Entrada de Cards**: slideInRight
@@ -174,20 +155,20 @@ O projeto inclui diversos efeitos CSS modernos:
 - **Hover**: Shine effect, glow
 - **Transições**: Smooth transitions (0.3s)
 
-## 🔄 Auto-refresh
+## Auto-refresh
 
 - Dados: A cada 30 segundos
 - Câmera: A cada 5 segundos
 - Alertas: A cada 10 segundos
 
-## 📱 Responsividade
+## Responsividade
 
 Breakpoints:
 - Desktop: 1024px+
 - Tablet: 768px - 1023px
 - Mobile: até 767px
 
-## 🚢 Deploy
+##  Deploy
 
 ### Opções recomendadas:
 1. **Render** (gratuito com GitHub)
@@ -200,7 +181,7 @@ Breakpoints:
 web: gunicorn app:app
 ```
 
-## 📝 Próximos Passos
+## Próximos Passos
 
 ### Implementações Necessárias:
 - [ ] Integração com OpenCV/MediaPipe para reconhecimento facial
@@ -211,7 +192,7 @@ web: gunicorn app:app
 - [ ] Gráficos em tempo real com WebSockets
 - [ ] Dashboard de análise avançada
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Porta 5000 já em uso
 ```bash
@@ -230,16 +211,11 @@ pip install --upgrade pip
 pip install -r requirements.txt --force-reinstall
 ```
 
-## 📄 Licença
 
-Este projeto foi desenvolvido como parte do programa SENAI 4.0.
 
-## 📧 Suporte
 
-Para dúvidas ou problemas, entre em contato com a equipe de desenvolvimento.
-
----
 
 **Desenvolvido com ❤️ pela equipe SENAI 4.0**
 
 Última atualização: 12 de novembro de 2025
+
